@@ -33,9 +33,8 @@ class CspFeatures:
         X_train = np.vstack(X_train)
         y_train = np.hstack(y_train)
 
-        if type == 'wp':
+        if self.type == 'wp':
             X_train_csp = np.empty((2304, 3, 4))
-
             for i in range(3):
                 X_train_band = X_train[:, :, i, :]
                 self.csp[i].fit(X_train_band, y_train)
